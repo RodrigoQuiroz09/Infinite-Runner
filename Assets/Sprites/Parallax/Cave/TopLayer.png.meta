@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 546bb6c38b8df9b40bef368480375547
+guid: 939e4b7a2c70df84c9ab541aaa6dd7d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,112 +102,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Gunner_Green_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 9
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04beec958e2f56d49b441ed24d2a4df8
-      internalID: 587401513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Green_Idle_1
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 9
-        width: 28
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 434b5047f78399f42b4086d83120a740
-      internalID: -184224038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Green_Idle_2
-      rect:
-        serializedVersion: 2
-        x: 108
-        y: 9
-        width: 28
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08723ae7c6d666d4787404cf52b7ca31
-      internalID: -1547128934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Green_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 9
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8795c5c03721cbd45842b4d75820b3b2
-      internalID: -1358830361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gunner_Green_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 9
-        width: 28
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d72252c3b6c8ad47b5a3043c76f2a56
-      internalID: 685353877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -218,12 +113,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Gunner_Green_Idle_3: -1358830361
-      Gunner_Green_Idle_1: -184224038
-      Gunner_Green_Idle_4: 685353877
-      Gunner_Green_Idle_0: 587401513
-      Gunner_Green_Idle_2: -1547128934
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
