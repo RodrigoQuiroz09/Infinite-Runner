@@ -19,7 +19,7 @@ public class Life : MonoBehaviour
             amount = value;
             if (amount <= 0)
             {
-                onDeath.Invoke();
+                onDeath?.Invoke();
 
             }
         }

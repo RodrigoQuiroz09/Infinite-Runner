@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: eb9a3be92bd679948bf0e4e57fc5d010
+guid: a5772e749776df044a09ec4001951d38
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gunner_Green_Jump_0
+      name: Gunner_Red_Idle_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 10
+        x: 12
+        y: 9
         width: 28
-        height: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2833a2bafbd30a45b06a83d340ce750
-      internalID: 1981560764
+      spriteID: 827579e335d9e8a47b3094fc3671ed0d
+      internalID: -2002183701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gunner_Green_Jump_1
+      name: Gunner_Red_Idle_1
       rect:
         serializedVersion: 2
-        x: 61
+        x: 60
         y: 9
         width: 28
-        height: 34
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +139,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59c9de0216bb62c4d84319a0c317563a
-      internalID: -1876960603
+      spriteID: a64103c5c2d9d2c4faf32c70fe1d673d
+      internalID: 145357290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Red_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 9
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d67dda20f15b443b89444d7dde5758
+      internalID: 634253443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Red_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 9
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efaa78a1581d5ab4dbbfff97bd97e603
+      internalID: 906571817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gunner_Red_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 9
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9323181aa48640147bd17184f45ba54d
+      internalID: -364062709
       vertices: []
       indices: 
       edges: []
@@ -156,8 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gunner_Green_Jump_0: 1981560764
-      Gunner_Green_Jump_1: -1876960603
+      Gunner_Red_Idle_4: -364062709
+      Gunner_Red_Idle_2: 634253443
+      Gunner_Red_Idle_3: 906571817
+      Gunner_Red_Idle_0: -2002183701
+      Gunner_Red_Idle_1: 145357290
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
