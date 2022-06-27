@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (SharedInstance != null) Destroy(this);
         SharedInstance=this;
-        _gameState = GameState.MenuScreen;
+        _gameState = GameState.Play;
     }
 
     void Update() 

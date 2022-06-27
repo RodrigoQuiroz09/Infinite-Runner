@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager SharedInstance;
     [SerializeField] Animator player;
+    [SerializeField] Animator whitePlayer;
     public UnityAction OnPlay;
     [SerializeField] GameObject UI;
 
@@ -21,6 +22,7 @@ public class MenuManager : MonoBehaviour
          if (Input.anyKeyDown)
         {
             player.SetBool("IsRunning", true);
+            whitePlayer.SetBool("IsRunning", true);
             OnPlay?.Invoke();
             UI.SetActive(false);
            
