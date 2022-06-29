@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Animator _anim;
     private BoxCollider2D _collider;
     private Rigidbody2D _rig;
+    private Weapon _weapon;
 
      void Awake() 
      {
@@ -16,13 +17,18 @@ public class Enemy : MonoBehaviour
         _anim=GetComponent<Animator>();
         _collider=GetComponent<BoxCollider2D>();
         _rig=GetComponent<Rigidbody2D>();
+        _weapon=gameObject.GetComponent<Weapon>();
         _life.onDeath+=Die;
         sight.OnSight+=ShootTarget;
     }
 
     void ShootTarget()
     {
-        Debug.Log("Shot");
+        if(_life.Amount>0)
+        {
+            if(_weapon.ShootBullet("EnemyBullet", 0.1f)) _weapon.ToggleMuzzle();
+        }
+        
     }
 
     IEnumerator GoDownInYForDeathAnim()
@@ -44,5 +50,6 @@ public class Enemy : MonoBehaviour
         _rig.isKinematic = true;
         _collider.enabled=false;
         _anim.SetTrigger("IsDeath");
+        sight.gameObject.SetActive(false);
     }
 }

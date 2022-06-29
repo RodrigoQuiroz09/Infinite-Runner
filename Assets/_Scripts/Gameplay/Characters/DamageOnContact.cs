@@ -21,14 +21,26 @@ public class DamageOnContact : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        _moveF.CanMoveForward=false;
-        StartCoroutine(_moveB.GoLeft(gameObject.transform.position.x,gameObject.transform.position.x-2));
-        _anim.SetTrigger("Impact");
-       
-       Invoke("OffObject",0.2f);
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Enemy")|| other.gameObject.CompareTag("Floor"))
+        {
+            _moveF.CanMoveForward=false;
+            StartCoroutine(_moveB.GoLeft(gameObject.transform.position.x,gameObject.transform.position.x-2));
+            _anim.SetTrigger("Impact");
+        
+            Invoke("OffObject",0.2f);
 
-        Life life = other.GetComponent<Life>();
-        if (life != null) life.Amount -= damage;
+            Life life = other.GetComponent<Life>();
+            if (life != null) life.Amount -= damage;
+            
+            PlayerController player=other.GetComponent<PlayerController>();
+            if(player!=null) 
+            {
+                if(!player.IsInvincible) player.PlayReceiveDamageAnimation();
+                else life.Amount += damage;
+            }
+            
+        }
+
     }
 
     void OffObject()

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DeathLimits : MonoBehaviour
 {
-    [SerializeField] GameObject respawnPoint;
-    [SerializeField] Animator deathAnimator;
+    [SerializeField] ExplosionParticlesTrigger explosion;
     private BoxCollider2D _col;
     private float localPos;
     void Awake() 
@@ -17,25 +16,15 @@ public class DeathLimits : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.SetActive(false);
-            deathAnimator.gameObject.transform.position= new Vector3( 
-                other.gameObject.transform.position.x, 
-                other.gameObject.transform.position.y+1, 
-                other.gameObject.transform.position.z);
-            deathAnimator.SetTrigger("Death");
-            localPos=deathAnimator.gameObject.transform.position.x;
-            float limitPos=localPos-2;
-            StartCoroutine(deathAnimator.gameObject.GetComponent<MoveBackwards>().GoLeft(localPos,limitPos));
-            other.gameObject.transform.position=respawnPoint.transform.position;
-            other.gameObject.SetActive(true);
-            other.gameObject.GetComponent<PlayerController>().PlayReceiveRespawnAnimation();
-            Invoke("ResetTriggerAnimation",1f);
+            Vector3 deathPos= new Vector3(
+                other.gameObject.transform.position.x,
+                other.gameObject.transform.position.y+1,
+                other.gameObject.transform.position.z
+            );
+            explosion.TriggerExplosion(other.gameObject,deathPos);
         }
     }
 
-    void ResetTriggerAnimation()
-    {
-        deathAnimator.ResetTrigger("Death");
-    }
+
 
 }

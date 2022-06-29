@@ -47,6 +47,7 @@ public class Weapon : MonoBehaviour
     void FireBullet()
     {
         var bullet = ObjectPool.SharedInstance.GetFirstPooledObject();
+        bullet.layer = LayerMask.NameToLayer(layer);
         bullet.transform.position = shootingPoint.transform.position;
         bullet.transform.rotation = shootingPoint.transform.rotation;
         bullet.SetActive(true);

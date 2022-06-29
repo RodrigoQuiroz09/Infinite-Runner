@@ -8,7 +8,7 @@ public class PlatformGenerator : MonoBehaviour
 {
     public static PlatformGenerator SharedInstance;
     public UnityAction OnPlatformLimit;
-    [SerializeField] public List<MovePlatform> platforms;
+    public List<MovePlatform> platforms;
     int listPos=0;
 
     void Awake()
@@ -29,6 +29,7 @@ public class PlatformGenerator : MonoBehaviour
         MovePlatform platform=platforms[listPos];
         platforms.RemoveAt(listPos);
         platform.gameObject.SetActive(true);
+        platform.enemySpawner.InstantiateObj();
         StartCoroutine( platform.GoLeft());
     }
 }

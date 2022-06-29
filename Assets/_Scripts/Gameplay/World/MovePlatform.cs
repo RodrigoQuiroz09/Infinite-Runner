@@ -8,6 +8,7 @@ public class MovePlatform : MonoBehaviour
 {
     float limitPos= -25f;
     [SerializeField] Vector3 spawnPoint;
+    public Spawner enemySpawner;
 
     private float localPos;
 
@@ -35,6 +36,7 @@ public class MovePlatform : MonoBehaviour
             }
             if(localPos < limitPos)
             {
+                enemySpawner.ResetObj();
                 gameObject.SetActive(false);
                 transform.position =  spawnPoint;
                 localPos=spawnPoint.x;
