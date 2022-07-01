@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         MenuManager.SharedInstance.OnPlay+=()=>{_gameState = GameState.Play;};
+        EffectPickableFactory.InitFactory();
     }
 
     void Awake()

@@ -14,13 +14,15 @@ public class GameplayManager : MonoBehaviour
     public float Speed=>speed;
     float timePassed = 0;
 
-    void Start() {
+    void Start() 
+    {
         MenuManager.SharedInstance.OnPlay+=HandleStart;
     }
     void Awake()
     {
         if (SharedInstance != null) Destroy(this);
         SharedInstance=this;
+        
     }
 
     public void HandleUpdate()
