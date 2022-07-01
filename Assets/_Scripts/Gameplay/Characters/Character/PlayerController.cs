@@ -43,7 +43,6 @@ public class PlayerController : MonoBehaviour
     }
     public void HandleUpdate()
     {
-
         IsOnGround = IsGrounded();
        
         if(Input.GetKeyDown("space") && IsOnGround)
@@ -120,6 +119,11 @@ public class PlayerController : MonoBehaviour
             dmgSeq.Pause();
             PlayReceiveRespawnAnimation();
         }
+    }
+    public void PauseDmgAnimation()
+    {
+        dmgSeq.Pause();
+        _characterSprite.color=intialColorPlayer;
     }
 
     void InitializeDmgAnimation()

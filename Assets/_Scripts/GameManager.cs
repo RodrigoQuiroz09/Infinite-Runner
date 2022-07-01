@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum GameState
 {
-    MenuScreen, Play, LoseScreen
+    MenuScreen, Play, GameOver
 }
 
 public class GameManager : MonoBehaviour
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         {
             MenuManager.SharedInstance.HandleUpdate();
         }
-        if(_gameState == GameState.LoseScreen)
+        if(_gameState == GameState.GameOver)
         {
             
         }

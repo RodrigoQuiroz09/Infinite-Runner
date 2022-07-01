@@ -38,13 +38,13 @@ public class EffectPickableFactory
 
     static void SumHundredPoints(int points)
     {
-        Debug.Log(points);
+        ScoreManager.SharedInstance.PointsObtained+=points;
     }
 
     static void SumOneHealthPoint(PlayerController player)
     {
-        Debug.Log(1);
-        Debug.Log(player.gameObject.GetComponent<Life>().Amount);
+        player.gameObject.GetComponent<Life>().Amount+=1;
+        player.PauseDmgAnimation();
     }
 }
 

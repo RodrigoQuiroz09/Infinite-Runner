@@ -7,8 +7,11 @@ public class MenuManager : MonoBehaviour
     public static MenuManager SharedInstance;
     [SerializeField] Animator player;
     [SerializeField] Animator whitePlayer;
+    [SerializeField] GameObject MenuUI;
+    [SerializeField] GameObject InGameUI;
+    [SerializeField] GameObject GameOverUI;
+
     public UnityAction OnPlay;
-    [SerializeField] GameObject UI;
 
     void Awake()
     {
@@ -24,8 +27,8 @@ public class MenuManager : MonoBehaviour
             player.SetBool("IsRunning", true);
             whitePlayer.SetBool("IsRunning", true);
             OnPlay?.Invoke();
-            UI.SetActive(false);
-           
+            MenuUI.SetActive(false);
+            InGameUI.SetActive(true);
         }
     }
 }

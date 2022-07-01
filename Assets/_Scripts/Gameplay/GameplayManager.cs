@@ -8,10 +8,12 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] MovePlatform firstPlatform;
     [SerializeField] float initialSpeed;
     [SerializeField] PlayerController player;
+
     public float InitialSpeed=>initialSpeed;
-    
+
     float speed;
     public float Speed=>speed;
+
     float timePassed = 0;
 
     void Start() 
@@ -22,7 +24,6 @@ public class GameplayManager : MonoBehaviour
     {
         if (SharedInstance != null) Destroy(this);
         SharedInstance=this;
-        
     }
 
     public void HandleUpdate()
@@ -34,6 +35,7 @@ public class GameplayManager : MonoBehaviour
         }
         timePassed += Time.deltaTime;
         player.HandleUpdate();
+        ScoreManager.SharedInstance.HandleUpdate();
     }
     void HandleStart()
     {

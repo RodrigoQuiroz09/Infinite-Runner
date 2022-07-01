@@ -16,7 +16,6 @@ public class PickableHolder : MonoBehaviour
 
     public void HandleRestart()
     {
-        
         _spite.sprite=objectPickable.Base.SpriteObj;
         whiteSpite.sprite=objectPickable.Base.SpriteObj;
         _spite.color=Color.white;
@@ -30,27 +29,18 @@ public class PickableHolder : MonoBehaviour
     void Awake()
     {
         _spite = GetComponent<SpriteRenderer>();
-        
         initialPos=transform.position;
-      
         idleSeq = DOTween.Sequence();
         InitializeIdleAnimation();
-    }
-
-    private void Start() 
-    {
-
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Player"))
         {
-
             idleSeq.Pause();
             PlayPickUpAnimation();
             objectPickable.Effect.OnCollisionPoints?.Invoke(points);
             objectPickable.Effect.OnCollisionHeal?.Invoke(other.gameObject.GetComponent<PlayerController>());
-
         }
     }
 
@@ -60,7 +50,6 @@ public class PickableHolder : MonoBehaviour
         idleSeq.Append(transform.DOLocalMoveY(initialPos.y+.1f,1.5f));
         idleSeq.Append(transform.DOLocalMoveY(initialPos.y,1.5f));
         idleSeq.SetLoops(-1,LoopType.Restart);
-        
     }
 
     void PlayPickUpAnimation()
@@ -72,7 +61,6 @@ public class PickableHolder : MonoBehaviour
         seq.Join(_text.DOFade(1,1f));
         seq.Append(whiteSpite.DOFade(0, .1f));
         seq.Append(_text.DOFade(0,1f));
-
     }
 
 

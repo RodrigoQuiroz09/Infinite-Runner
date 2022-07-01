@@ -16,7 +16,7 @@ public class Life : MonoBehaviour
         get => amount;
         set
         {
-            amount = value;
+            amount = Mathf.Clamp(value, 0, 6);;
             if (amount <= 0)
             {
                 onDeath?.Invoke();

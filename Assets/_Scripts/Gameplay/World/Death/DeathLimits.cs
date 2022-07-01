@@ -21,6 +21,8 @@ public class DeathLimits : MonoBehaviour
                 other.gameObject.transform.position.y+1,
                 other.gameObject.transform.position.z
             );
+            Life playerLife = other.gameObject.GetComponent<Life>();
+            if(playerLife !=null )playerLife.Amount-=2;
             explosion.TriggerExplosion(other.gameObject,deathPos,false);
         }
     }
