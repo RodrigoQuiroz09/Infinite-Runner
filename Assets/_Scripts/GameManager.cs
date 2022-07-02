@@ -9,12 +9,22 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] PlayerController playerController;
     private GameState _gameState;
     public static GameManager SharedInstance;
 
     void Start()
     {
-        MenuManager.SharedInstance.OnPlay+=()=>{_gameState = GameState.Play;};
+        MenuManager.SharedInstance.OnPlay+=()=>
+        {
+            MenuManager.SharedInstance.HandleRestartMainMenu();
+            _gameState = GameState.Play;
+        };
+        playerController.PlayerDeath+=()=>
+        {
+            MenuManager.SharedInstance.HandleRestartMainMenu();
+            _gameState = GameState.GameOver;
+        };
         EffectPickableFactory.InitFactory();
     }
 
@@ -34,11 +44,11 @@ public class GameManager : MonoBehaviour
         }
         if(_gameState == GameState.MenuScreen)
         {
-            MenuManager.SharedInstance.HandleUpdate();
+            MenuManager.SharedInstance.HandleUpdateMainMenu();
         }
         if(_gameState == GameState.GameOver)
         {
-            
+            MenuManager.SharedInstance.HandleUpdateGameOver();
         }
     }
 }

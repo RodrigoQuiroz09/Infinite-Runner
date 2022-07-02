@@ -19,8 +19,31 @@ public class MenuManager : MonoBehaviour
         SharedInstance=this;
     }
 
+    public void HandleRestartMainMenu()
+    {
+
+    }
+
     
-    public void HandleUpdate()
+    public void HandleUpdateMainMenu()
+    {
+         if (Input.anyKeyDown)
+        {
+            player.SetBool("IsRunning", true);
+            whitePlayer.SetBool("IsRunning", true);
+            OnPlay?.Invoke();
+            MenuUI.SetActive(false);
+            InGameUI.SetActive(true);
+        }
+    }
+
+    public void HandleRestartGameOver()
+    {
+        
+    }
+
+
+    public void HandleUpdateGameOver()
     {
          if (Input.anyKeyDown)
         {

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
+
 public class PlayerController : MonoBehaviour
 {
     public bool IsInvincible=false;
+    public UnityAction PlayerDeath;
 
     [SerializeField] float jumpVelocity;
     [SerializeField] LayerMask platformsLayerMask;
@@ -32,6 +35,8 @@ public class PlayerController : MonoBehaviour
         _anim = gameObject.GetComponent<Animator>();
         _collider = gameObject.GetComponent<BoxCollider2D>();
         _weapon = gameObject.GetComponent<Weapon>();
+
+        _life.onDeath+=Die;
     }
 
     void Start()
@@ -84,6 +89,14 @@ public class PlayerController : MonoBehaviour
         _anim.SetBool("IsGrounded", raycast2D.collider!=null);  
         whiteSprite.SetBool("IsGrounded", raycast2D.collider!=null);  
         return raycast2D.collider!=null;
+    }
+
+    void Die()
+    {
+        _anim.SetBool("IsGrounded", false); 
+        whiteSprite.SetBool("IsGrounded", false);  
+        PlayerDeath?.Invoke();
+    
     }
 
         
