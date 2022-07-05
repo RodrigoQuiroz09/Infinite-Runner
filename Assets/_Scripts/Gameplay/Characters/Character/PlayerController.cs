@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
         _anim = gameObject.GetComponent<Animator>();
         _collider = gameObject.GetComponent<BoxCollider2D>();
         _weapon = gameObject.GetComponent<Weapon>();
-
         _life.onDeath+=Die;
     }
 
@@ -46,6 +45,16 @@ public class PlayerController : MonoBehaviour
         dmgSeq=DOTween.Sequence();
         InitializeDmgAnimation();
     }
+
+    public void HandleStart()
+    {
+        _life.Amount=_life.maximumLife;
+        gameObject.SetActive(true);
+        _anim.SetBool("IsRunning", true);
+        whiteSprite.SetBool("IsRunning", true);
+
+    }
+
     public void HandleUpdate()
     {
         IsOnGround = IsGrounded();
@@ -73,7 +82,7 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Mouse0) && Time.timeScale > 0)
         {
-                if(_weapon.ShootBullet("PlayerBullet", 0.1f)) _weapon.ToggleMuzzle();
+            if(_weapon.ShootBullet("PlayerBullet", 0.1f)) _weapon.ToggleMuzzle();
         }
         
     }
@@ -93,9 +102,9 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
-        _anim.SetBool("IsGrounded", false); 
-        whiteSprite.SetBool("IsGrounded", false);  
+        gameObject.SetActive(false);
         PlayerDeath?.Invoke();
+        dmgSeq.Pause();
     
     }
 

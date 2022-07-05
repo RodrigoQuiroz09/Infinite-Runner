@@ -8,6 +8,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] MovePlatform firstPlatform;
     [SerializeField] float initialSpeed;
     [SerializeField] PlayerController player;
+    [SerializeField] PlatformGenerator platformGenerator;
 
     public float InitialSpeed=>initialSpeed;
 
@@ -16,9 +17,12 @@ public class GameplayManager : MonoBehaviour
 
     float timePassed = 0;
 
+    private Vector3 firstPlatformInitialPos;
+
     void Start() 
     {
         MenuManager.SharedInstance.OnPlay+=HandleStart;
+        firstPlatformInitialPos=firstPlatform.gameObject.transform.position;
     }
     void Awake()
     {
@@ -39,7 +43,14 @@ public class GameplayManager : MonoBehaviour
     }
     void HandleStart()
     {
-          speed=initialSpeed;
-          StartCoroutine( firstPlatform.GoLeft());
+        ScoreManager.SharedInstance.PointsObtained=0;
+        ScoreManager.SharedInstance.DistanceTraveled=0;
+        platformGenerator.RestartPlatforms();
+        firstPlatform.gameObject.SetActive(true);
+        firstPlatform.gameObject.transform.position=firstPlatformInitialPos;
+        player.HandleStart();
+        
+        speed=initialSpeed;
+        StartCoroutine(firstPlatform.GoLeft());
     }
 }

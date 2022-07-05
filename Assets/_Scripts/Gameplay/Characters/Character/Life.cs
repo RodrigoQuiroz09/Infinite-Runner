@@ -7,7 +7,7 @@ public class Life : MonoBehaviour
     [SerializeField]
     private float amount;
 
-    public float maximumLife = 100f;
+    public float maximumLife = 6f;
 
     public UnityAction onDeath;
 

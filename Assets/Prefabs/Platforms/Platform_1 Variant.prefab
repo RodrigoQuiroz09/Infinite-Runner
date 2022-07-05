@@ -403,7 +403,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8873703549503130704, guid: 0eb2a75bfb67d954abec34a7fabf7eaa, type: 3}
       propertyPath: m_ColliderPaths.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8873703549503130704, guid: 0eb2a75bfb67d954abec34a7fabf7eaa, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
@@ -7199,7 +7199,11 @@ PrefabInstance:
       objectReference: {fileID: 5539018932349845557}
     - target: {fileID: 8921540658381628302, guid: 0eb2a75bfb67d954abec34a7fabf7eaa, type: 3}
       propertyPath: m_Name
-      value: Platform_1 Variant
+      value: Platform_1 Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921540658381628302, guid: 0eb2a75bfb67d954abec34a7fabf7eaa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8921540658381628303, guid: 0eb2a75bfb67d954abec34a7fabf7eaa, type: 3}
       propertyPath: m_RootOrder

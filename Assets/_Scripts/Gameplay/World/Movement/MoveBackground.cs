@@ -8,16 +8,18 @@ public class MoveBackground : MonoBehaviour
 	[SerializeField] float PontoDeDestino;
 	[SerializeField] float PontoOriginal;
 
-	bool CanMove=false;
 
 	[SerializeField] float speed;
 	float localPos;
-    void Start() {
-        MenuManager.SharedInstance.OnPlay+=()=>{CanMove=true;};
+    
+	void Start() 
+	{
+        //MenuManager.SharedInstance.OnPlay+=()=>{CanMove=true;};
     }
+
 	void Update () 
 	{
-		if (CanMove)
+		if (GameManager.SharedInstance.CanMove)
 		{
 			speed=GameplayManager.SharedInstance.Speed-GameplayManager.SharedInstance.InitialSpeed-relativeSpeed;
 			localPos = transform.position.x;

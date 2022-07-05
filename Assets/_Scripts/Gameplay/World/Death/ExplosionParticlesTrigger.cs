@@ -12,7 +12,7 @@ public class ExplosionParticlesTrigger : MonoBehaviour
         _deathAnimator = GetComponent<Animator>();
     }
 
-    public void TriggerExplosion(GameObject exploded, Vector3 explosionPos,bool killedByBullet)
+    public void TriggerExplosion(GameObject exploded, Vector3 explosionPos,bool killedByBullet, bool isDeath=false)
     {
             exploded.SetActive(false);
             _deathAnimator.gameObject.transform.position = explosionPos;
@@ -22,7 +22,7 @@ public class ExplosionParticlesTrigger : MonoBehaviour
             float limitPos=localPos-2;
             StartCoroutine(_deathAnimator.gameObject.GetComponent<MoveBackwards>().GoLeft(localPos,limitPos));
             exploded.transform.position = (killedByBullet?exploded.transform.position:respawnPoint.transform.position) ;
-            exploded.SetActive(true);
+            exploded.SetActive(!isDeath);
             exploded.GetComponent<PlayerController>().PlayReceiveRespawnAnimation();
             Invoke("ResetTriggerAnimation",1f);
     }

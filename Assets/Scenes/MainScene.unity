@@ -146,10 +146,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1920834254}
     m_Modifications:
-    - target: {fileID: 3612713724341714351, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3659447741745697392, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -197,10 +193,6 @@ PrefabInstance:
     - target: {fileID: 3659447741745697393, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
       propertyPath: m_Name
       value: Platform_1 Variant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3659447741745697393, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
@@ -352,6 +344,7 @@ MonoBehaviour:
   firstPlatform: {fileID: 1506015760}
   initialSpeed: -3
   player: {fileID: 1158265799}
+  platformGenerator: {fileID: 1920834255}
 --- !u!4 &134198814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3659447741745697392, guid: 9edb05d23f6edd6479a6e6ee7ef651be, type: 3}
@@ -484,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216dd3682a286ac44956f0484e93951b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  playerController: {fileID: 1158265799}
 --- !u!1 &272358234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,11 +2045,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 638f73d70946eab4b9ad87619b3211cc, type: 3}
---- !u!95 &1120080510 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9093087616326451725, guid: 638f73d70946eab4b9ad87619b3211cc, type: 3}
-  m_PrefabInstance: {fileID: 1072862004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1128954333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,11 +2169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c751862a015d24ea712d35025948a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1158265803 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9093087617132099535, guid: 638f73d70946eab4b9ad87619b3211cc, type: 3}
-  m_PrefabInstance: {fileID: 1072862004}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1158265805 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1590175362053690021, guid: 638f73d70946eab4b9ad87619b3211cc, type: 3}
@@ -4734,7 +4717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New highscore!
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e2182dabad0df9046801ef2c9c4751a8, type: 2}
   m_sharedMaterial: {fileID: -4995208354564717067, guid: e2182dabad0df9046801ef2c9c4751a8, type: 2}
@@ -5201,13 +5184,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c91567f4aa72cb48b77e76e5f5d0bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platforms:
+  InitialPlatforms:
   - {fileID: 134198818}
   - {fileID: 45159716}
   - {fileID: 1487654750}
   - {fileID: 428191348}
   - {fileID: 518513127}
   - {fileID: 1793163668}
+  platforms: []
 --- !u!1 &1922610481
 GameObject:
   m_ObjectHideFlags: 0
@@ -8715,6 +8699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2042704327}
   - component: {fileID: 2042704328}
+  - component: {fileID: 2042704329}
   m_Layer: 0
   m_Name: Menu Manager
   m_TagString: Untagged
@@ -8749,11 +8734,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19200491a5824b24395b268679897e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1158265803}
-  whitePlayer: {fileID: 1120080510}
   MenuUI: {fileID: 2126520760}
   InGameUI: {fileID: 1310441523}
   GameOverUI: {fileID: 284783660}
+  highScore: {fileID: 272358236}
+--- !u!114 &2042704329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042704326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd4183f47e39dd44bc104fd114b1f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: {fileID: 1966818208}
+  newRecord: {fileID: 1672301582}
+  playerController: {fileID: 1158265799}
 --- !u!1 &2071526923
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,12 +20,11 @@ public class MovePlatform : MonoBehaviour
 
     public IEnumerator GoLeft()
     {
- 
         bool flag=true;
         while (localPos >= limitPos && gameObject.activeSelf==true)
         {
             localPos = transform.position.x;
-            localPos += GameplayManager.SharedInstance.Speed * Time.deltaTime;
+            localPos +=( GameManager.SharedInstance.CanMove ? GameplayManager.SharedInstance.Speed * Time.deltaTime : 0);
             transform.position = new Vector3 (localPos, transform.position.y, transform.position.z);
            
                //Debug.Log(GameplayManager.SharedInstance.Speed+gameObject.name); 
@@ -37,10 +36,7 @@ public class MovePlatform : MonoBehaviour
             }
             if(localPos < limitPos)
             {
-                enemySpawner.ResetObj();
-                gameObject.SetActive(false);
-                transform.position =  spawnPoint;
-                localPos=spawnPoint.x;
+                ResetPlatform();
                 PlatformGenerator.SharedInstance.platforms.Add(this);
                 break;
             }
@@ -48,8 +44,15 @@ public class MovePlatform : MonoBehaviour
             yield return null;
 
         }
-        
+    }
 
+    public void ResetPlatform()
+    {
+        enemySpawner.ResetObj();
+        gameObject.SetActive(false);
+        transform.position =  spawnPoint;
+        localPos=spawnPoint.x;
+        
     }
 
 

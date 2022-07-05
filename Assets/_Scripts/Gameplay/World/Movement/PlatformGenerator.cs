@@ -8,6 +8,7 @@ public class PlatformGenerator : MonoBehaviour
 {
     public static PlatformGenerator SharedInstance;
     public UnityAction OnPlatformLimit;
+    [SerializeField] List<MovePlatform> InitialPlatforms; 
     public List<MovePlatform> platforms;
     int listPos=0;
 
@@ -22,15 +23,27 @@ public class PlatformGenerator : MonoBehaviour
         OnPlatformLimit+=SpawnPlatform;
     }
 
+    public void RestartPlatforms()
+    {
+        platforms.Clear();
+        foreach (var item in InitialPlatforms)
+        {
+            item.ResetPlatform();
+        }
+        platforms=new List<MovePlatform>(InitialPlatforms);;
+    }
+
     void SpawnPlatform()
     {
-        
-        listPos = Random.Range(0, platforms.Count-1);
-        MovePlatform platform=platforms[listPos];
-        platforms.RemoveAt(listPos);
-        platform.gameObject.SetActive(true);
-        platform.enemySpawner.InstantiateObj();
-        platform.pickableManager.GeneratePickableObj();
-        StartCoroutine( platform.GoLeft());
+        if(GameManager.SharedInstance.CanMove)
+        {
+            listPos = Random.Range(0, platforms.Count-1);
+            MovePlatform platform=platforms[listPos];
+            platforms.RemoveAt(listPos);
+            platform.gameObject.SetActive(true);
+            platform.enemySpawner.InstantiateObj();
+            platform.pickableManager.GeneratePickableObj();
+            StartCoroutine( platform.GoLeft());
+        }
     }
 }

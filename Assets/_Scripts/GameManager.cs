@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController playerController;
     private GameState _gameState;
     public static GameManager SharedInstance;
+    public bool CanMove {
+        get
+        {
+            return _gameState == GameState.Play ? true : false;
+        }
+    }
 
     void Start()
     {
@@ -22,7 +28,8 @@ public class GameManager : MonoBehaviour
         };
         playerController.PlayerDeath+=()=>
         {
-            MenuManager.SharedInstance.HandleRestartMainMenu();
+            playerController.gameObject.SetActive(false);
+            MenuManager.SharedInstance.HandleRestartGameOver();
             _gameState = GameState.GameOver;
         };
         EffectPickableFactory.InitFactory();
