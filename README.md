@@ -15,7 +15,7 @@
   <p align="center">
     <a href="https://github.com/RodrigoQuiroz09/Infinite-Runner"><strong>View APK</strong></a>
     ·
-    <a href="https://github.com/RodrigoQuiroz09/Infinite-Runner/docs"><strong>Explore the docs</strong></a>
+    <a href="https://github.com/RodrigoQuiroz09/Infinite-Runner/tree/main/docs"><strong>Explore the GDD</strong></a>
 
   </p>
 </div>
@@ -48,7 +48,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/main/images/mainmenu.PNG)
 
 - Personal project only to show on portfolio
 - A small scoped mobile game planned to be as a starting point for future projects and practice skills to be a game developer in Unity. It is meant to be for casual mobile-game players with a endless runner typo gameplay.
@@ -62,51 +62,46 @@
 ### Built With
 
 - [![Unity][unity.com]][unity-url]
-- [![Unity][csharp.com]][csharp-url]
+- [![C#][csharp.com]][csharp-url]
+- [![NET#][net.com]][net-url]
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+### External tools
+
+- [![itchio][itchio.com]][itchio-url]
+- [![Notion][notion.com]][notion-url]
+- [![VSCode][vsc.com]][vsc-url]
+  - <strong>Core Extensions</strong>
+  - C# XML Documentation Comments
+  - C# v1.24.4
+  <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## Requirements
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
-   ```
+- Unity Version 2020.2.12f1 or Newer
+- C# Programming Language
+- [DoTween Library](http://dotween.demigiant.com/index.php)
+- Text Mesh Pro (Unity Library)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## Gameplay
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<table>
+  <tr>
+    <td>Mobile Controls</td>
+     <td>PC Controls</td>
+  </tr>
+  <tr>
+    <td><img src="images/MobileTutorial.png" width=480 height=270></td>
+    <td><img src="images/MobileTutorial.png" width=480 height=270></td>
+  </tr>
+ </table>
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more explanation, please refer to the [Documentation](https://github.com/RodrigoQuiroz09/Infinite-Runner/tree/main/docs)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -155,3 +150,11 @@ This is a open source game, everyone is invited to take the project as starting 
 [unity.com]: https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
 [csharp-url]: https://docs.microsoft.com/en-us/dotnet/csharp/
 [csharp.com]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
+[notion-url]: https://www.notion.so/product?fredir=1
+[notion.com]: https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white
+[vsc-url]: https://code.visualstudio.com
+[vsc.com]: https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white
+[net-url]: https://dotnet.microsoft.com/en-us/
+[net.com]: https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white
+[itchio-url]: https://itch.io
+[itchio.com]: https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white
