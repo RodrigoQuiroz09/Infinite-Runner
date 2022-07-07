@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/RodrigoQuiroz09/Infinite-Runner/images/logo.PNG">
+  <a href="https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/main/images/logo.PNG">
     <img src="images/logo.PNG" alt="Logo" width="300" height="180">
   </a>
 
@@ -45,7 +45,9 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/main/images/mainmenu.PNG)
+<a href="https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/main/images/mainmenu.PNG">
+  <img src="images/mainmenu.PNG" alt="Main Menu" width="850" height="480">
+</a>
 
 - Personal project only to show on portfolio
 - A small scoped mobile game planned to be as a starting point for future projects and practice skills to be a game developer in Unity. It is meant to be for casual mobile-game players with a endless runner typo gameplay.
@@ -154,7 +156,7 @@ This is a open source game, everyone is invited to take the project as starting 
 [license-url]: https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/mainmenu.png
+[product-screenshot]: images/mainmenu.PNG
 [unity-url]: https://unity.com
 [unity.com]: https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
 [unity-a-url]: https://assetstore.unity.com
