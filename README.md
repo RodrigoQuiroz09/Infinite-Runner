@@ -97,7 +97,7 @@
   </tr>
   <tr>
     <td><img src="images/MobileTutorial.PNG" width=480 height=270></td>
-    <td><img src="images/PCtutorial.PNG" width=480 height=240></td>
+    <td><img src="images/PCTutorial.PNG" width=480 height=240></td>
   </tr>
  </table>
 
