@@ -89,13 +89,13 @@ public class PlayerController : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             
-            if(touch.position.x>screenWidth && IsOnGround)
+            if(touch.position.x<screenWidth && IsOnGround)
             {
                 _anim.SetBool("IsGrounded", false);  
                 whiteSprite.SetBool("IsGrounded", false);  
                 Jump();
             }
-            if(touch.position.x <= screenWidth)
+            else if(touch.position.x > screenWidth)
             {
                 if(_weapon.ShootBullet("PlayerBullet", 0.1f)) _weapon.ToggleMuzzle();
             }

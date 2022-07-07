@@ -67,6 +67,7 @@
 
 ### External tools
 
+- [![Unity][unity-a.com]][unity-a-url]
 - [![itchio][itchio.com]][itchio-url]
 - [![Notion][notion.com]][notion-url]
 - [![VSCode][vsc.com]][vsc-url]
@@ -97,7 +98,7 @@
   </tr>
   <tr>
     <td><img src="images/MobileTutorial.png" width=480 height=270></td>
-    <td><img src="images/MobileTutorial.png" width=480 height=270></td>
+    <td><img src="images/PCtutorial.png" width=480 height=240></td>
   </tr>
  </table>
 
@@ -109,12 +110,19 @@ _For more explanation, please refer to the [Documentation](https://github.com/Ro
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+- Tilemap Config And Base Scenario for testing movement
+- Parallax and infinite scenario
+- Design of different platforms for random generation
+- Basic Mechanics Player
+  - Jumping
+  - Shooting
+- Mapping for mobile devices
+- Life System
+- Enemies and AI
+- Pickable Objects
+- Ui and points system
 
-See the [open issues](https://silicon-grill-d89.notion.site/ec3575c8e0b74b8891632f8c6656f194?v=fa412af091e24c8ba0b07a61a53d696c) for a full list of proposed features (and known issues).
+See the [Notion To-Do list](https://silicon-grill-d89.notion.site/ec3575c8e0b74b8891632f8c6656f194?v=fa412af091e24c8ba0b07a61a53d696c) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -128,11 +136,15 @@ This is a open source game, everyone is invited to take the project as starting 
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## Acknowledgments and Assets
 
-- []()
-- []()
-- []()
+- [The Dungeon Pack - Parallax Background](https://pixfinity.itch.io/the-dungeon-pack)
+- [GUNNER - ANIMATED CHARACTER](https://secrethideout.itch.io/team-wars-platformer-battle)
+- [Animated Explosions](https://opengameart.org/content/animated-explosions)
+- [Simple Heart Health System](https://assetstore.unity.com/packages/tools/gui/simple-heart-health-system-120676)
+- [Free Pixel Font - Thaleah](https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059)
+- [Free Game Items](https://assetstore.unity.com/packages/2d/environments/free-game-items-131764)
+- [Sunny Land](https://assetstore.unity.com/packages/2d/characters/sunny-land-103349)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -148,6 +160,8 @@ This is a open source game, everyone is invited to take the project as starting 
 [product-screenshot]: images/mainmenu.png
 [unity-url]: https://unity.com
 [unity.com]: https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white
+[unity-a-url]: https://assetstore.unity.com
+[unity-a.com]: https://img.shields.io/badge/Unity-Asset-Store?style=for-the-badge&logo=unity&logoColor=white
 [csharp-url]: https://docs.microsoft.com/en-us/dotnet/csharp/
 [csharp.com]: https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white
 [notion-url]: https://www.notion.so/product?fredir=1
