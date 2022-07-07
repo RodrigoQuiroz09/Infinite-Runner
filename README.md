@@ -28,16 +28,13 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#external-tools">External Tools</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#requirements">Requirements</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#gameplay-controls">Gameplay Controls</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -89,7 +86,7 @@
 
 <!-- USAGE EXAMPLES -->
 
-## Gameplay
+## Gameplay Controls
 
 <table>
   <tr>
