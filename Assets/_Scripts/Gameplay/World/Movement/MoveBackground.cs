@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Code extracted from a parallax package and adapted to the game. For more information of the original code check the next link to the asset store.
+/// <see href="link">
+/// https://assetstore.unity.com/packages/2d/textures-materials/nature/free-pixel-art-forest-133112#content
+/// </see>
+/// </summary>
 public class MoveBackground : MonoBehaviour
 {
-	[SerializeField] float relativeSpeed;
+	//Variable to escalate speed according to its layer
+	[Tooltip("Speed to match the gameplay speed")][SerializeField] float relativeSpeed;
 	[SerializeField] float PontoDeDestino;
 	[SerializeField] float PontoOriginal;
+	
 
-
-	[SerializeField] float speed;
+	[Tooltip("Initial velocity of the background")][SerializeField] float speed;
 	float localPos;
-    
-	void Start() 
-	{
-        //MenuManager.SharedInstance.OnPlay+=()=>{CanMove=true;};
-    }
 
+	/// <summary>
+    /// Code for parallax movement. Reaches a limit and restart position.
+    /// </summary>
 	void Update () 
 	{
 		if (GameManager.SharedInstance.CanMove)

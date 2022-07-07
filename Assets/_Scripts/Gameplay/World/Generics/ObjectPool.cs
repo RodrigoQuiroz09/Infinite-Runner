@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    public static ObjectPool SharedInstance; // Fomrato de un Singleton
+    public static ObjectPool SharedInstance; 
 
-    public GameObject prefab;
+    [Tooltip("Prefab to spawn")]public GameObject prefab;
 
-    public List<GameObject> pooledObjects;
-    public int amountToPool;
+    [Tooltip("List of objects spawned")]public List<GameObject> pooledObjects;
+    [Tooltip("Amount of prefabs to spawn")]public int amountToPool;
 
 
     private void Awake()
@@ -18,7 +18,15 @@ public class ObjectPool : MonoBehaviour
         SharedInstance=this;
     }
 
-    private void Start()
+    /// <summary>
+    /// <para>
+    /// Instatiate the prefab and assign it to the list.
+    /// </para>
+    /// <para>
+    /// Extra. Assigned a parent for organization of GameObjects in the scene
+    /// </para>
+    /// </summary>
+    void Start()
     {
         pooledObjects = new List<GameObject>();
         GameObject tmp;
@@ -31,6 +39,10 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get the first item of the pool (list of prefabs)
+    /// </summary>
+    /// <returns>GameObject from the list</returns>
     public GameObject GetFirstPooledObject()
     {
         for (int i = 0; i < amountToPool; i++)

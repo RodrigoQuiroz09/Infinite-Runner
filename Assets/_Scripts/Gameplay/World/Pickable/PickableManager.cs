@@ -1,25 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/**
+ *TODO: Do more pickable objects and check the randomness spawn. For the moment is just taking the first position.
+*/
 
 public class PickableManager : MonoBehaviour
 {
-   [SerializeField] PickableHolder [] spawnPoints;
-   [SerializeField] List<Pickable> objectsPoints;
-   [SerializeField] List<Pickable> objectsHelth;
+    [Tooltip("Spawn point where pickable objects will apear")]
+    [SerializeField] PickableHolder [] spawnPoints;
 
+    [Tooltip("Pickable tha give points")]
+    [SerializeField] List<Pickable> objectsPoints;
+
+    [Tooltip("Pickable that give health")]
+    [SerializeField] List<Pickable> objectsHelth;
+
+    [Tooltip("Array of points. MUST align with objectsPoints")]
     [SerializeField] int [] Points;
 
-   private void Start() {
+    void Start() 
+    {
         GeneratePickableObj();
-   }
+    }
 
-   public void GeneratePickableObj()
-   {
-       int counterHealth=0;
-       foreach (var item in spawnPoints)
-       {
-        int pos=0;
+    /// <summary>
+    /// Randomly generate objects from the list. Health objects have a max of 2 per platform.
+    /// </summary>
+    public void GeneratePickableObj()
+    {
+        int counterHealth=0;
+        foreach (var item in spawnPoints)
+        {
+            int pos=0;
         
             if(counterHealth<2)
             {
@@ -38,15 +51,19 @@ public class PickableManager : MonoBehaviour
             {
                 ResetPickable(item,objectsPoints[pos],Points[pos]);
             }
-       }
-   }
+        }
+    }
 
-   void ResetPickable(PickableHolder pick, Pickable pickable, int points)
-   {
-    pick.points=points;
-   
-    pick.objectPickable=pickable;
-    pick.HandleRestart();
-   
-   }
+    /// <summary>
+    /// Assing a pickable and restart values from PickableHolder with its respective points
+    /// </summary>
+    /// <param name="pick">The gameObject/PickableHolder assigned</param>
+    /// <param name="pickable">Pickable to be assigned</param>
+    /// <param name="points">Points to be added</param>
+    void ResetPickable(PickableHolder pick, Pickable pickable, int points)
+    {
+        pick.points=points;
+        pick.objectPickable=pickable;
+        pick.HandleRestart();
+    }
 }

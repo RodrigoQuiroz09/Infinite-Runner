@@ -3,17 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+
+/// <summary>
+/// GameObject holder of the scriptable object of pickable
+/// </summary>
 public class PickableHolder : MonoBehaviour
 {
     [SerializeField] SpriteRenderer whiteSpite;
     [SerializeField] TextMeshProUGUI _text;
 
+    /// <summary>
+    /// Generic pickable assigned
+    /// </summary>
     public Pickable objectPickable;
-    public int points;
+
+    [HideInInspector] public int points; // Point to be added if needed
     private SpriteRenderer _spite;
     Vector3 initialPos;
     Sequence idleSeq;
 
+    /// <summary>
+    /// Reset sprites, choose an effect from pickable, get to position.
+    /// </summary>
     public void HandleRestart()
     {
         _spite.sprite=objectPickable.Base.SpriteObj;
@@ -26,6 +37,9 @@ public class PickableHolder : MonoBehaviour
         idleSeq.Play();
     }
 
+    /// <summary>
+    /// Initialize DoTween animation an get initial position
+    /// </summary>
     void Awake()
     {
         _spite = GetComponent<SpriteRenderer>();
@@ -34,7 +48,12 @@ public class PickableHolder : MonoBehaviour
         InitializeIdleAnimation();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    /// <summary>
+    /// When hit by the player play animation and trigger it´s respective unity actions (effects)
+    /// </summary>
+    /// <param name="other">Object collides with (Player)</param>
+    void OnTriggerEnter2D(Collider2D other) 
+    {
         if(other.gameObject.CompareTag("Player"))
         {
             idleSeq.Pause();
@@ -44,6 +63,9 @@ public class PickableHolder : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// DoTween Animation that goes up and down
+    /// </summary>
     void InitializeIdleAnimation()
     {
         idleSeq.Pause();
@@ -52,6 +74,9 @@ public class PickableHolder : MonoBehaviour
         idleSeq.SetLoops(-1,LoopType.Restart);
     }
 
+    /// <summary>
+    /// DoTween Animation that represents a pick up animation
+    /// </summary>
     void PlayPickUpAnimation()
     {
         _text.text = (points>0 ? $"+{points}": "");
@@ -62,6 +87,4 @@ public class PickableHolder : MonoBehaviour
         seq.Append(whiteSpite.DOFade(0, .1f));
         seq.Append(_text.DOFade(0,1f));
     }
-
-
 }

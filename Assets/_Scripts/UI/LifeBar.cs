@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class LifeBar : MonoBehaviour
 {
-    [SerializeField] Life targetLife;
+    
+    [Tooltip("Life the UI is going to represent")][SerializeField] Life targetLife;
 
+    /**Visual representation of the life
+     * ! It must be a Radial image
+    */
     private Image _image;
 
     private void Awake()
@@ -14,6 +18,9 @@ public class LifeBar : MonoBehaviour
         _image = GetComponent<Image>();
     }
 
+    /// <summary>
+    /// Update the propotion of the filled image depending of the amount of life left
+    /// </summary>
     void Update()
     {
          _image.fillAmount = targetLife.Amount / targetLife.maximumLife;

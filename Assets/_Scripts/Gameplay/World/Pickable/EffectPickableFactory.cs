@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EffectPickableFactory
 {
+    /// <summary>
+    /// Create a dictionary that order the effect id with a method effect
+    /// </summary>
     public static void InitFactory()
     {
         foreach (var condition in EffectConditions)
@@ -13,6 +16,10 @@ public class EffectPickableFactory
             statusCond.Id = id;
         }
     }
+
+    /// <summary>
+    /// Dictionary that aligns EffectId with method and Unity Action
+    /// </summary>
     public static Dictionary<EffectPickableId, EffectPickable> EffectConditions { get; set; } =
 
         new Dictionary<EffectPickableId, EffectPickable>()
@@ -36,11 +43,20 @@ public class EffectPickableFactory
             },
         };
 
+    /// <summary>
+    /// Add a ceratin amount of points to the Score Manager
+    /// TODO: Change Name
+    /// </summary>
+    /// <param name="points"> Points to be added</param>
     static void SumHundredPoints(int points)
     {
         ScoreManager.SharedInstance.PointsObtained+=points;
     }
 
+    /// <summary>
+    /// Add +1 health to the player
+    /// </summary>
+    /// <param name="player"> Player Controller to get life component</param>
     static void SumOneHealthPoint(PlayerController player)
     {
         player.gameObject.GetComponent<Life>().Amount+=1;
@@ -48,6 +64,9 @@ public class EffectPickableFactory
     }
 }
 
+/// <summary>
+/// Id´s of effects
+/// </summary>
 public enum EffectPickableId
 {
     NONE, SUMPTS,PLUSHEALTH

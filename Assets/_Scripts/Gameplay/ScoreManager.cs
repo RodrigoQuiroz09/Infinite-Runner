@@ -9,8 +9,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI distanceText;
     [SerializeField] TextMeshProUGUI scoreText;
 
-    public float DistanceTraveled;
-    public float PointsObtained;
+    [HideInInspector]public float DistanceTraveled;
+    [HideInInspector]public float PointsObtained;
 
     void Awake()
     {
@@ -18,12 +18,19 @@ public class ScoreManager : MonoBehaviour
         SharedInstance=this;
     }
 
+    /// <summary>
+    /// Reset score points and the distance.
+    /// </summary>
     public void HandleStart()
     {
         DistanceTraveled=0;
         PointsObtained=0;
     }
 
+    /// <summary>
+    /// Every second it add 5 to the points and distance.
+    /// Updates the text in the Gameplay UI.
+    /// </summary>
     public void HandleUpdate()
     {
         DistanceTraveled+=Time.deltaTime*5;

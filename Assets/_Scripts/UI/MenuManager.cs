@@ -10,8 +10,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject MenuUI;
     [SerializeField] GameObject InGameUI;
     [SerializeField] GameObject GameOverUI;
-    [SerializeField] Text highScore;
-    public UnityAction OnPlay;
+    //Main menu Highscore text
+    [SerializeField] Text highScore; 
+    //Trigger to pass to GameState -> Play
+    public UnityAction OnPlay; 
 
     void Awake()
     {
@@ -19,11 +21,17 @@ public class MenuManager : MonoBehaviour
         SharedInstance=this;
     }
 
+    /// <summary>
+    /// Initializes the highscore text from a variable stored in PlayerPrefs
+    /// </summary>
     void Start() 
     {
         highScore.text=$"HIGHSCORE: <color=#feae34>{PlayerPrefs.GetInt("hs", 0)}</color> ";
     }
 
+    /// <summary>
+    /// Toggles the needed UI GameObjects to Restart the Main menu
+    /// </summary>
     public void HandleRestartMainMenu()
     {
         MenuUI.SetActive(true);
@@ -31,7 +39,9 @@ public class MenuManager : MonoBehaviour
         GameOverUI.SetActive(false);
     }
 
-    
+    /// <summary>
+    /// A HanldeUpdate to manage it in the GameManager that triggers the Unity Action to Play and toggles the necesary UI
+    /// </summary>
     public void HandleUpdateMainMenu()
     {
          if (Input.anyKeyDown)
@@ -43,6 +53,9 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Toggles the needed UI GameObjects to Restart the Game Over Screen
+    /// </summary>
     public void HandleRestartGameOver()
     {
         MenuUI.SetActive(false);
@@ -50,9 +63,17 @@ public class MenuManager : MonoBehaviour
         GameOverUI.SetActive(true);
     }
 
-
+    /// <summary>
+    /// A HanldeUpdate to manage it in the GameManager that, for the moment, contains the same functionality that the Update of Main Menu
+    /// </summary>
+    /**
+     *TODO: Include 2 types of restart :
+     *    1. Restart the level without going to main menu
+     *    2. Go to Main Menu and then start again.
+    */
     public void HandleUpdateGameOver()
     {
+
          if (Input.anyKeyDown)
         {
             HandleUpdateMainMenu();

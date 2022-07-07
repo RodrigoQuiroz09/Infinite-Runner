@@ -6,10 +6,19 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] Sight sight;
-    [SerializeField] int points;
-    [SerializeField] TextMeshProUGUI text;
-    [SerializeField] GameObject Canvas;
+    [Tooltip("Line of vision of the enemy")]
+    [SerializeField] 
+    Sight sight;
+
+    [Tooltip("Points given for killing this enemy")]
+    [SerializeField] 
+    int points;
+
+    [Tooltip("Text holder for points")]
+    [SerializeField] 
+    TextMeshProUGUI text;
+
+    [Tooltip("Canvas attached to the text")][SerializeField] GameObject Canvas;
 
     private Life _life;
     private Animator _anim;
@@ -17,6 +26,9 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _rig;
     private Weapon _weapon;
     
+    /// <summary>
+    /// Add listener whenever the enemy dies and finds the player onSight
+    /// </summary>
     void Awake() 
     {
         _life=GetComponent<Life>();
@@ -29,6 +41,9 @@ public class Enemy : MonoBehaviour
         sight.OnSight+=ShootTarget;
     }
 
+    /// <summary>
+    /// Spawn a bullet and triggers a mini animation of a Muzzeflash
+    /// </summary>
     void ShootTarget()
     {
         if(_life.Amount>0)
@@ -38,6 +53,10 @@ public class Enemy : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Aligns the Y position of the enemy in order to match the death animation with the floor.
+    /// </summary>
+    /// <returns>Wait for next frame</returns>
     IEnumerator GoDownInYForDeathAnim()
     {
         float localPos=transform.position.y;
@@ -51,17 +70,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Deactivate colliders and add points to the ScoreManager
+    /// </summary>
     void Die()
     {
         StartCoroutine( GoDownInYForDeathAnim());
         PlayPointsAnimation();
         _rig.isKinematic = true;
-        _collider.enabled=false;
+        _collider.enabled = false;
         _anim.SetTrigger("IsDeath");
         sight.gameObject.SetActive(false);
         ScoreManager.SharedInstance.PointsObtained+=points;
     }
 
+    /// <summary>
+    /// Esthetic animation for feedback and show the points gained from the enemy 
+    /// </summary>
     void PlayPointsAnimation()
     {
         text.text = (points>0 ? $"+{points}": "");

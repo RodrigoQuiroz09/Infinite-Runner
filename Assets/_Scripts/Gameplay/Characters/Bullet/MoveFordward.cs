@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class MoveFordward : MonoBehaviour
 {
-    [Range(0, 20)]
-    public bool CanMoveForward=true;
+    // Flag to enable the forward movement direction of the bullet
+    [HideInInspector] public bool CanMoveForward=true;
     private SpriteRenderer _sprite;
 
-    private void Awake() {
+    void Awake() 
+    {
         _sprite=GetComponent<SpriteRenderer>();
     }
+
+    /// <summary>
+    /// When ever the flag CanMoveForward the bullet (depend on which entity spawn it) Move to its relative forward direction
+    /// </summary>
     void Update()
     {
         if(CanMoveForward)
