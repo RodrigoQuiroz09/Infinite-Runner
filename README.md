@@ -96,8 +96,8 @@
      <td>PC Controls</td>
   </tr>
   <tr>
-    <td><img src="images/MobileTutorial.png" width=480 height=270></td>
-    <td><img src="images/PCtutorial.png" width=480 height=240></td>
+    <td><img src="images/MobileTutorial.PNG" width=480 height=270></td>
+    <td><img src="images/PCtutorial.PNG" width=480 height=240></td>
   </tr>
  </table>
 
