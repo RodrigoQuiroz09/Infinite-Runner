@@ -147,6 +147,10 @@ This is a open source game, everyone is invited to take the project as starting 
 - [Free Game Items](https://assetstore.unity.com/packages/2d/environments/free-game-items-131764)
 - [Sunny Land](https://assetstore.unity.com/packages/2d/characters/sunny-land-103349)
 
+## Inspiration
+
+- [I Paid Game Developers on Fiverr to Make the Same Game (Second Game)](https://www.youtube.com/watch?v=I9G6xJTUCHs)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
