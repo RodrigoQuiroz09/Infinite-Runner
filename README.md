@@ -159,7 +159,7 @@ This is a open source game, everyone is invited to take the project as starting 
 [contributors-shield]: https://img.shields.io/github/contributors/RodrigoQuiroz09/Infinite-Runner.svg?style=for-the-badge
 [contributors-url]: https://github.com/RodrigoQuiroz09/Infinite-Runner/graphs/contributors
 [license-shield]: https://img.shields.io/github/license/RodrigoQuiroz09/Infinite-Runner.svg?style=for-the-badge
-[license-url]: https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/master/LICENSE.txt
+[license-url]: https://github.com/RodrigoQuiroz09/Infinite-Runner/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/rodrigo-q-3b8213129/
 [badge-dev]: https://forthebadge.com/images/badges/built-by-developers.svg
